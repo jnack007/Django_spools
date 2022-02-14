@@ -3,7 +3,7 @@ import os
 import django
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "washu.settings")
 django.setup()
-path =  "C:\\Users\jnack\dropbox\database project" # Set path of new directory here
+path =  "/home/jnack007" # Set path of new directory here
 os.chdir(path) # changes the directory
 from spools.models import Spool # imports the model
 Spool.objects.all().delete()
@@ -25,5 +25,8 @@ with open('Schedule.csv') as csvfile:
             installed=row['Installed'],
             comments=row['Comments'])
         p.save()
-
+from django.core.management import call_command
+call_command("makemigrations", interactive=False)
+from django.core.management import call_command
+call_command("migrate", interactive=False)
 exit()

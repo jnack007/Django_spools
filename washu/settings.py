@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(7emf8_*weft1ta^s^m7+z@(u!g6)7bk*zfvx@e3rdt(f)(8%i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -78,13 +78,11 @@ WSGI_APPLICATION = 'washu.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        #'NAME': BASE_DIR / 'db.sqlite3',
-        'NAME': 'spoolsdb',
-        'USER': 'postgres',
-        'PASSWORD': 'Jsm82969408$',
-        'Host': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'jnack007$spoolsdb',
+        'USER': 'jnack007',
+        'PASSWORD': '84!mZzokoYhY',
+        'HOST': 'jnack007.mysql.pythonanywhere-services.com'
     }
 }
 
@@ -127,7 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = '/home/jnack007/Django_spools/media'
 MEDIA_URL = '/media/'
 
 # Default primary key field type
