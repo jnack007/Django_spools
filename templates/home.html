@@ -1,5 +1,8 @@
-<h1>Enter Spool Name or Level Below<h1>
+<center>
+<h1>Enter Spool Name or Level Below</h1>
 
-<form action="{% url 'search_results' %}" method='get'>
-  <input name='q' type='text' placeholder=Search....>
+<form action="{% url 'search_results' %}" method='get' role='search'>
+  <input name='q' type='search' placeholder='E.g. AS-L00-020....'>
+  <button>Search</button>
 </form>
+</center>

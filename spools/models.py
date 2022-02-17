@@ -14,7 +14,7 @@ class Spool(models.Model):
     insulation_blocks = models.CharField(max_length=10)
     fab_completed= models.CharField(max_length=10)
     on_site = models.CharField(max_length=10)
-    installed = models.CharField(max_length=10)
+    status = models.CharField(max_length=10)
     comments = models.CharField(max_length=200)
 
 

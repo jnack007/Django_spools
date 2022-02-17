@@ -1,9 +1,12 @@
 import csv
 import os
 import django
+import environ
+env = environ.Env()
+environ.Env.read_env()
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "washu.settings")
 django.setup()
-path =  "/home/jnack007" # Set path of new directory here
+path =  env('CSVPATH') # Set path of new directory here
 os.chdir(path) # changes the directory
 from spools.models import Spool # imports the model
 Spool.objects.all().delete()
@@ -22,7 +25,7 @@ with open('Schedule.csv') as csvfile:
             released_shop=row['Released to Shop/Field'],
             fab_completed=row['Fab Completed'],
             on_site=row['On Site'],
-            installed=row['Installed'],
+            status=row['Installed'],
             comments=row['Comments'])
         p.save()
 from django.core.management import call_command
